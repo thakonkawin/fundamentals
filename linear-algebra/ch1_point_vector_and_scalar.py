@@ -13,7 +13,7 @@ Usually, these axes are perpendicular to each other (at 90-degree angles).
 
 class Content(Enum):
     ct1 = 'A point is a location in space, \nwe describe its position using a coordinate system'
-    ct2 = 'A coordinate system is defined by:\nAn origin — the starting point\nAxes — lines that show direction (like X, Y, Z)\nThe number of axes depends on the number of dimensions (e.g., 2D has 2 axes, 3D has 3)'
+    ct2 = 'A point is a boder and size use for reference a position in a coordinate system'
 
 
 class Point(Scene):
@@ -57,3 +57,7 @@ class Point(Scene):
             ]]
         )
         
+class Vector(Scene):
+    def construct(self):
+        text2 = Text(Content.cts.value, t2c={"point": RED}).scale(0.7).to_edge(UP)
+        self.add(text2)
